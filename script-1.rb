@@ -10,17 +10,27 @@ READ: print File.read("/Home/comics.txt")
 end
 =end
 
+=begin DONE
 # list files in ./posts/
-# convert files to blogEntries
+# convert files to blogEntries (no b/c File data structure is sufficient)
 ## read file titles
 ## read datemodified
 ## read content
-# blogEngine.setTitle
-=begin
-blogPosts.each do |post|
-  blogEndine.convertAndSchedulePost(postFile) -- compute title, dateModified, content
 =end
-# blogEngine.render(destination-filename)
 
+=begin TODO
+build blogEngine
+  blogEngine.setTitle -> void
+  blogEngine.appendPost(title, body, creationDate) -> void
+  append post to existing HTML body with correct HTML tags
+  blogEngine.renderToHTMLFile(destination-filename) -> void
+== OPTIONAL ==
+blogEngine.setTitle(#ofPost, title)
+blogEngine.setBody(#ofPost, body)
+blogEngine.setCreationDate(#ofPost, creationDate)
+==============
+blogPosts.each do |post|
+  blogEngine.appendPost(title, body, creationDate)
+=end
 
 Dir.foreach("./posts") {|file| puts file};
