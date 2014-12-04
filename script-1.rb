@@ -33,4 +33,10 @@ blogPosts.each do |post|
   blogEngine.appendPost(title, body, creationDate)
 =end
 
-Dir.foreach("./posts") {|file| puts file};
+files = []
+Dir.foreach("./posts") {|file| 
+  if !file.eql?(".") && !file.eql?("..")
+    files << File.new("./posts/" + file)
+  end
+}
+files.map { |file| puts File.basename(file, ".txt"), File.read(file), file.mtime}
