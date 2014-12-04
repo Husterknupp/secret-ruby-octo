@@ -17,21 +17,21 @@ end
 ## read file titles
 ## read datemodified
 ## read content
+build Blog data structure
+  Blog.setTitle(title) -> void
+  Blog.appendPost(title, body, creationDate) -> void
+    append post to existing HTML body with correct HTML tags
+  Blog.renderToHTMLFile(destination-filename) -> void
+blogPosts.each do |post|
+  Blog.appendPost(title, body, creationDate)
 =end
 
 =begin TODO
-build blogEngine
-  blogEngine.setTitle -> void
-  blogEngine.appendPost(title, body, creationDate) -> void
-  append post to existing HTML body with correct HTML tags
-  blogEngine.renderToHTMLFile(destination-filename) -> void
 == OPTIONAL ==
-blogEngine.setTitle(#ofPost, title)
-blogEngine.setBody(#ofPost, body)
-blogEngine.setCreationDate(#ofPost, creationDate)
+Blog.setTitle(#ofPost, title)
+Blog.setBody(#ofPost, body)
+Blog.setCreationDate(#ofPost, creationDate)
 ==============
-blogPosts.each do |post|
-  blogEngine.appendPost(title, body, creationDate)
 =end
 
 files = []
