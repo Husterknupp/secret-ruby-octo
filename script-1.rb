@@ -1,6 +1,7 @@
 =begin examples
 FileUtils, File, Dir, Arrays, Hash, String
 <<, map, do .. end, [].each, 
+files.map { |file| puts File.basename(file, ".txt"), File.read(file), file.mtime}
 entries = Dir.entries "/Users/bens/"
 File.open("/Home/bens/ssh-key-2014-07-01.pub", "a") do |f|
 File.mtime("file");
